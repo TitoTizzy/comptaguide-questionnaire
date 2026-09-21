@@ -1,0 +1,4 @@
+ComptaGuide-reponses-*.json
+node_modules/
+.sites-runtime/
+test-results/
