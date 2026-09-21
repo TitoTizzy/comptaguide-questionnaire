@@ -2,3 +2,5 @@
 :root .budget{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}.budget article{background:white;border:1px solid var(--line);border-radius:15px;padding:25px}.budget h2{font-size:30px}.budget h2 span{font-size:15px;font-weight:500}.budget p:not(.eyebrow){font-size:13px;line-height:1.65;color:#53696e}.budget dl{font-size:13px;margin:20px 0}.budget dl div{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid var(--line)}.budget dd{margin:0;white-space:nowrap;font-weight:700}.budget-note{background:#eff5e7;padding:16px;border-radius:10px;font-size:14px;line-height:1.6}.budget-note p{margin-bottom:0}@media(max-width:760px){:root .budget{grid-template-columns:1fr}.budget article{padding:20px}}
 
 .brand-logo{width:56px;height:56px;object-fit:contain;border-radius:8px;flex-shrink:0}
+
+.shared{margin:24px 0}.shared p{font-size:14px;line-height:1.7}.shared form{max-width:440px}.shared label{display:block;margin:15px 0 8px}.shared input{width:100%;padding:12px;border:1px solid #b9cbcf;border-radius:8px;font:inherit}.shared button{margin:12px 6px 0 0}

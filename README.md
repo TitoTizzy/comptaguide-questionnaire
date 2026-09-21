@@ -2,6 +2,10 @@
 
 Petite application en français, sans installation, conçue pour GitHub Pages. Six étapes, parcours par actionnaire, export/reprise JSON, impression PDF et comparaison des trois réponses.
 
+## Réponses partagées entre actionnaires
+
+La connexion Supabase est préparée mais non activée tant que `config.js` est vide. Voir [le guide d’activation](supabase/ACTIVATION.md). Une fois configurée, chacun se connecte à son compte, partage ses réponses et consulte celles des deux autres. Les brouillons ne sont pas partagés automatiquement. Les instructions ci-dessous décrivent le mode fichiers, toujours disponible avant activation.
+
 ## Utilisation
 
 1. Chaque actionnaire sélectionne son nom et remplit les questions. Les choix déjà connus ne sont pas redemandés. Les propositions restent individuelles jusqu'à décision collective.
@@ -14,13 +18,13 @@ Les champs peuvent rester vides. « À discuter ensemble » permet d'indiquer un
 
 ## Mettre sur GitHub Pages
 
-Créer un dépôt dédié, par exemple `comptaguide-questionnaire`. Y déposer uniquement le contenu de ce dossier, avec `index.html` à la racine : `app.js`, `style.css`, `favicon.png`, `logo.png`, `.nojekyll`, `.gitignore` et ce README. **Ne pas déposer le dossier financier parent, les pièces privées ou les fichiers de réponses.**
+Créer un dépôt dédié, par exemple `comptaguide-questionnaire`. Y déposer uniquement le contenu de ce dossier, avec `index.html` à la racine : `app.js`, `config.js`, `shared.js`, `style.css`, `favicon.png`, `logo.png`, `.nojekyll`, `.gitignore` et ce README. **Ne pas déposer le dossier financier parent, les pièces privées ou les fichiers de réponses.**
 
 Dans le dépôt : **Settings → Pages → Build and deployment → Source : Deploy from a branch → main → /(root) → Save**. Après publication, partager l'adresse affichée par GitHub Pages. Les chemins relatifs fonctionnent aussi dans un sous-chemin de dépôt. La disponibilité de Pages dépend des réglages et du forfait du compte.
 
 Documentation officielle : https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-GitHub Pages sert les fichiers statiques et ne centralise pas les réponses. Cette version utilise donc des exports privés. Le site n'a ni authentification ni base de données. Les noms, répartitions, montant envisagé et questions du code seront visibles aux visiteurs du site et, si public, du dépôt. Aucun NIF, NIU, date de naissance ou courriel personnel connu n'est inclus dans le code. Aucun service tiers, traceur ou police distante n'est chargé.
+GitHub Pages sert les fichiers statiques et ne centralise pas les réponses. Cette version utilise donc des exports privés. Sans configuration Supabase, le site n’a ni authentification ni base de données. Les noms, répartitions, montant envisagé et questions du code seront visibles aux visiteurs du site et, si public, du dépôt. Aucun NIF, NIU, date de naissance ou courriel personnel connu n'est inclus dans le code. Aucun traceur ni police distante. Lorsque le partage est configuré, seules les API du projet Supabase choisi sont contactées.
 
 ## Aperçu local
 
