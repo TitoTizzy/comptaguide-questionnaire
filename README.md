@@ -32,4 +32,4 @@ Les questions et les conditions par actionnaire se trouvent au début de `app.js
 
 Capital : 832 USD est une base envisagée, non une confirmation du minimum légal ou de fonds versés. La validation reste à effectuer avec l'avocat et le notaire.
 
-Informations financières affichées : contrat Lyly’s estimé à 3 892 USD annuels (détail dans l’application), honoraires d’avocat de 1 500 USD communiqués par le fondateur, autres frais de constitution à chiffrer. Ces informations seront également visibles sur le site publié.
+Informations financières affichées : contrat Lyly’s estimé à 2 392 USD annuels, hors honoraires du comptable agréé (détail dans l’application), honoraires d’avocat de 1 500 USD communiqués par le fondateur, autres frais de constitution à chiffrer. Ces informations seront également visibles sur le site publié.
