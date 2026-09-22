@@ -1,23 +1,23 @@
-# ComptaGuide — Arbitrages à choix multiples, version 2
+# ComptaGuide — Décisions à deux voix, version 3
 
-18 questions en trois sections, fondées sur les seuls arbitrages et modalités encore ouverts après le premier questionnaire. Aucune réponse personnelle du premier tour n’est incluse dans le code.
+76 questions, dix thèmes ; choix unique ou multiple, Autre avec précision. Aucun montant financier affiché. Les questions portent sur les arbitrages et modalités complémentaires, sans collecte répétée d’identité ou de participations.
 
-- Boutons radio : un choix ; cases à cocher : plusieurs choix.
-- « Autre » et champ de précision ; précision requise pour « Autre » et les options qui demandent explicitement noms, délai ou seuil.
-- Réponses partielles autorisées. Un choix « Aucune unanimité » exclut les autres choix du même groupe.
-- Export/reprise JSON version 2, comparaison des trois fichiers, impression PDF et brouillon local facultatif.
-- Les anciens exports et brouillons version 1 ne sont ni écrasés ni convertis ; leur import dans cette nouvelle grille est refusé explicitement.
+## Règle définie par Myrtho
+
+La liste et sa synthèse constituent le relevé des décisions arrêtées pour la rédaction des statuts. Deux choix identiques de deux personnes distinctes sur trois arrêtent une décision. Aucun veto, aucune pondération par les actions pour cette consultation. Cette règle de collecte ne remplace pas les règles légales applicables aux organes sociaux, signatures ou formalités.
+
+Pour les choix multiples, chaque option ayant deux voix est retenue séparément. Une absence de réponse ne vaut pas accord. Aucune majorité : point à résoudre. Autre : texte identique après normalisation Unicode, casse et espaces ; aucune fusion sémantique automatique. Les commentaires ne changent pas une option standard. Un nouveau bulletin du même actionnaire remplace le précédent après confirmation ; les identités déclarées ne sont pas authentifiées.
 
 ## Utilisation
 
-Ouvrir index.html, sélectionner son nom, répondre puis télécharger le fichier et le transmettre par un canal privé. Pour consulter les trois contributions, importer leurs fichiers dans « Réunir les réponses ». Aucun envoi ni stockage distant automatique. Les propositions ne sont pas des résolutions signées.
+Ouvrir index.html, choisir son nom, répondre puis télécharger son bulletin JSON. Importer les trois fichiers dans Décisions à deux voix pour obtenir les options retenues, leurs soutiens et les propositions sans majorité. Impression PDF et export JSON du relevé disponibles. Les bulletins sont partiels si des réponses restent vides. L’export décisions est un relevé, pas un bulletin réimportable.
 
-## Publication
+Brouillon facultatif sur cet appareil, export/reprise JSON version 3. Anciens fichiers et brouillons v1/v2 conservés séparément ; leur import dans v3 est refusé. Aucun envoi automatique ni stockage distant. Supabase reste arrêté et non chargé.
 
-Fichiers actifs : index.html, questions.js, app.js, style.css, logo.png et favicon.png. GitHub Pages peut servir ce dossier à la racine ou dans un sous-chemin. Ne jamais y ajouter les réponses privées ni les pièces du dossier.
+## Fichiers actifs
 
-Le chantier Supabase reste arrêté : config.js, shared.js et supabase/ sont des archives techniques, non chargées par cette version et non compatibles avec son schéma sans adaptation explicite.
+index.html, questions.js, app.js, style.css, logo.png, favicon.png. Publier seulement ce dossier, jamais les bulletins ni les pièces privées. Les questions sont dans questions.js ; le dépouillement dans tally de app.js. Clé de sauvegarde : comptaguide-decisions-v3.
 
-## Maintenance
+## Référence administrative
 
-Questions et options : questions.js. Données : réponses structurées {choices: [...], other: "..."}, version 2. Brouillons : clé locale comptaguide-arbitrages-v2. Les imports sont validés et affichés en texte brut.
+[Formalités MCI](https://mci.gouv.ht/uploads/docs/AUTORISATION-DE-FONCTIONNEMENT-DES-SOCIETES-ANONYMES.pdf). La consultation alimente la préparation des actes ; elle ne vaut pas enregistrement de la société.
