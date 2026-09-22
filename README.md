@@ -1,39 +1,23 @@
-# Questionnaire ComptaGuide Financials
+# ComptaGuide — Arbitrages à choix multiples, version 2
 
-Petite application en français, sans installation, conçue pour GitHub Pages. Six étapes, parcours par actionnaire, export/reprise JSON, impression PDF et comparaison des trois réponses.
+18 questions en trois sections, fondées sur les seuls arbitrages et modalités encore ouverts après le premier questionnaire. Aucune réponse personnelle du premier tour n’est incluse dans le code.
 
-## Réponses partagées entre actionnaires
-
-La connexion Supabase est préparée mais non activée tant que `config.js` est vide. Voir [le guide d’activation](supabase/ACTIVATION.md). Une fois configurée, chacun se connecte à son compte, partage ses réponses et consulte celles des deux autres. Les brouillons ne sont pas partagés automatiquement. Les instructions ci-dessous décrivent le mode fichiers, toujours disponible avant activation.
+- Boutons radio : un choix ; cases à cocher : plusieurs choix.
+- « Autre » et champ de précision ; précision requise pour « Autre » et les options qui demandent explicitement noms, délai ou seuil.
+- Réponses partielles autorisées. Un choix « Aucune unanimité » exclut les autres choix du même groupe.
+- Export/reprise JSON version 2, comparaison des trois fichiers, impression PDF et brouillon local facultatif.
+- Les anciens exports et brouillons version 1 ne sont ni écrasés ni convertis ; leur import dans cette nouvelle grille est refusé explicitement.
 
 ## Utilisation
 
-1. Chaque actionnaire sélectionne son nom et remplit les questions. Les choix déjà connus ne sont pas redemandés. Les propositions restent individuelles jusqu'à décision collective.
-2. La sauvegarde locale est facultative : cocher « Conserver mes brouillons sur cet appareil » pour reprendre plus tard sur le même navigateur. Ce stockage n'est pas chiffré ; le laisser désactivé sur un appareil partagé. Sans sauvegarde, télécharger avant de quitter.
-3. Cliquer « Télécharger mes réponses ». Envoyer le fichier JSON à Myrtho par un canal privé habituel. Le site n'envoie rien automatiquement.
-4. Myrtho ouvre « Réunir les réponses », importe les fichiers reçus et imprime la synthèse ou l'enregistre en PDF via la boîte d'impression. La synthèse importée reste en mémoire, pas dans le dépôt ni dans le stockage local ; conserver les fichiers originaux pour la retrouver.
-5. Un répondant peut réimporter son fichier dans « Reprendre un fichier » pour le compléter. Un remplacement de réponses existantes demande confirmation.
+Ouvrir index.html, sélectionner son nom, répondre puis télécharger le fichier et le transmettre par un canal privé. Pour consulter les trois contributions, importer leurs fichiers dans « Réunir les réponses ». Aucun envoi ni stockage distant automatique. Les propositions ne sont pas des résolutions signées.
 
-Les champs peuvent rester vides. « À discuter ensemble » permet d'indiquer un point non tranché. Aucun fichier n'est une signature, une authentification de son auteur ou une validation juridique. Aucun document d'identité n'est demandé en téléchargement.
+## Publication
 
-## Mettre sur GitHub Pages
+Fichiers actifs : index.html, questions.js, app.js, style.css, logo.png et favicon.png. GitHub Pages peut servir ce dossier à la racine ou dans un sous-chemin. Ne jamais y ajouter les réponses privées ni les pièces du dossier.
 
-Créer un dépôt dédié, par exemple `comptaguide-questionnaire`. Y déposer uniquement le contenu de ce dossier, avec `index.html` à la racine : `app.js`, `config.js`, `shared.js`, `style.css`, `favicon.png`, `logo.png`, `.nojekyll`, `.gitignore` et ce README. **Ne pas déposer le dossier financier parent, les pièces privées ou les fichiers de réponses.**
-
-Dans le dépôt : **Settings → Pages → Build and deployment → Source : Deploy from a branch → main → /(root) → Save**. Après publication, partager l'adresse affichée par GitHub Pages. Les chemins relatifs fonctionnent aussi dans un sous-chemin de dépôt. La disponibilité de Pages dépend des réglages et du forfait du compte.
-
-Documentation officielle : https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-
-GitHub Pages sert les fichiers statiques et ne centralise pas les réponses. Cette version utilise donc des exports privés. Sans configuration Supabase, le site n’a ni authentification ni base de données. Les noms, répartitions, montant envisagé et questions du code seront visibles aux visiteurs du site et, si public, du dépôt. Aucun NIF, NIU, date de naissance ou courriel personnel connu n'est inclus dans le code. Aucun traceur ni police distante. Lorsque le partage est configuré, seules les API du projet Supabase choisi sont contactées.
-
-## Aperçu local
-
-Ouvrir `index.html` dans un navigateur suffit pour le questionnaire. Pour un aperçu servi : `python -m http.server 8765 --bind 127.0.0.1`, puis ouvrir http://127.0.0.1:8765. La sauvegarde dépend du navigateur et de l'origine : elle ne migre pas entre fichier local, localhost et GitHub Pages ; utiliser l'export/reprise.
+Le chantier Supabase reste arrêté : config.js, shared.js et supabase/ sont des archives techniques, non chargées par cette version et non compatibles avec son schéma sans adaptation explicite.
 
 ## Maintenance
 
-Les questions et les conditions par actionnaire se trouvent au début de `app.js`. Les identifiants de questions sont stables et utilisés dans les exports. Changer le schéma des fichiers nécessite de gérer la version d'import. Les réponses importées sont affichées en texte brut ; les fichiers sont validés avant reprise (application, version, actionnaire, clés, taille et types).
-
-Capital : 832 USD est une base envisagée, non une confirmation du minimum légal ou de fonds versés. La validation reste à effectuer avec l'avocat et le notaire.
-
-Informations financières affichées : contrat Lyly’s estimé à 2 392 USD annuels, hors honoraires du comptable agréé (détail dans l’application), honoraires d’avocat de 1 500 USD communiqués par le fondateur, autres frais de constitution à chiffrer. Ces informations seront également visibles sur le site publié.
+Questions et options : questions.js. Données : réponses structurées {choices: [...], other: "..."}, version 2. Brouillons : clé locale comptaguide-arbitrages-v2. Les imports sont validés et affichés en texte brut.

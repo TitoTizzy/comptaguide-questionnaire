@@ -4,3 +4,5 @@
 .brand-logo{width:56px;height:56px;object-fit:contain;border-radius:8px;flex-shrink:0}
 
 .shared{margin:24px 0}.shared p{font-size:14px;line-height:1.7}.shared form{max-width:440px}.shared label{display:block;margin:15px 0 8px}.shared input{width:100%;padding:12px;border:1px solid #b9cbcf;border-radius:8px;font:inherit}.shared button{margin:12px 6px 0 0}
+
+fieldset.question{border:0;padding:0;min-width:0}fieldset.question legend{font-weight:650;line-height:1.6;margin-bottom:8px}.question .choice{display:flex;align-items:flex-start;gap:12px;font-weight:400;padding:12px;border:1px solid var(--line);border-radius:9px;margin:8px 0;cursor:pointer}.choice:has(input:checked){background:#edf5e5;border-color:#527864}.choice input{flex:0 0 18px;width:18px;height:18px;margin:3px 0;accent-color:var(--green)}.question>textarea{margin-top:8px}.question>label:not(.choice){margin-top:16px}
